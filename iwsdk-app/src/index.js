@@ -74,17 +74,17 @@ World.create(document.getElementById('scene-container'), {
   const sphere = new Mesh(sphereGeometry, sphereMaterial);
   const sphereEntity = world.createTransformEntity(sphere);
 
-  sphereEntity.object3D.position.set(1, 0.5, -5);
+  sphereEntity.object3D.position.set(20, 0.5, 45);
 
   const sphere1 = new Mesh(sphereGeometry, sphere1Material);
   const sphere1Entity = world.createTransformEntity(sphere1);
 
-  sphere1Entity.object3D.position.set(0, 1, -5);
+  sphere1Entity.object3D.position.set(30, 1, -45);
 
   const sphere2 = new Mesh(sphereGeometry, sphere2Material);
   const sphere2Entity = world.createTransformEntity(sphere2);
 
-  sphere2Entity.object3D.position.set(-1, 0.75, -5);
+  sphere2Entity.object3D.position.set(-37, 0.75, 0);
 
   // Tree importing /////////////////////////////////////////////////////////////////////////
   const treeModel = AssetManager.getGLTF('furtree').scene;
