@@ -49,6 +49,11 @@ World.create(document.getElementById('scene-container'), {
 
 }).then((world) => {
 
+  
+
+
+
+
   const { camera } = world;
 
   //Add all my objects here
@@ -83,7 +88,7 @@ World.create(document.getElementById('scene-container'), {
 
   // Tree importing /////////////////////////////////////////////////////////////////////////
   const treeModel = AssetManager.getGLTF('furtree').scene;
-  const spacing = 5;
+  const spacing = 6;
   const gridSize = 100;
   const halfSize = gridSize / 2;
 
@@ -106,30 +111,32 @@ World.create(document.getElementById('scene-container'), {
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   var score = 0
+
   sphereEntity.addComponent(Interactable);      
-  sphereEntity.object3D.addEventListener("pointerdown", colorCube);
-  function colorCube() {
-      sphereEntity.object3D.material.color.set("red");
+  sphereEntity.object3D.addEventListener("pointerdown", collectCube);
+  function collectCube() {
+      sphereEntity.destroy();
       score += 1
       console.log(score);
+    
   }
 
   sphere1Entity.addComponent(Interactable);      
-  sphere1Entity.object3D.addEventListener("pointerdown", colorCube1);
-  function colorCube1() {
-      sphere1Entity.object3D.material.color.set("red");
+  sphere1Entity.object3D.addEventListener("pointerdown", collectCube1);
+  function collectCube1() {
+      sphere1Entity.destroy();
       score += 1
       console.log(score);
+    
   }
 
   sphere2Entity.addComponent(Interactable);      
-  sphere2Entity.object3D.addEventListener("pointerdown", colorCube2);
-  function colorCube2() {
-      sphere2Entity.object3D.material.color.set("red");
+  sphere2Entity.object3D.addEventListener("pointerdown", collectCube2);
+  function collectCube2() {
+      sphere2Entity.destroy();
       score += 1
       console.log(score);
   }
-
 
 
 
@@ -175,6 +182,7 @@ World.create(document.getElementById('scene-container'), {
       return false;
     }
   }
+
 
 
 
